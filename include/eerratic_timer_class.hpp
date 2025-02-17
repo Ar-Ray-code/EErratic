@@ -26,7 +26,7 @@ public:
     EEerraticTimer(uint32_t, get_current_time_func_t, sleep_func_t);
     void addStep(int, uint32_t, is_event_set_func_t, sleep_type_t);
     void resetLoop();
-    ERROR_CODE executeStep(int);
+    ERROR_CODE executeSleep(int);
     uint32_t getLastElapsedTime() const;
     uint32_t getLoopStartTime() const;
 

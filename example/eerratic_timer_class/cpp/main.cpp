@@ -50,7 +50,7 @@ int main() {
     {
         std::thread t(thread_func);
         t.detach();
-        ERROR_CODE ret0 = timer.executeStep(0);
+        ERROR_CODE ret0 = timer.executeSleep(0);
         std::cout << "Step 0 elapsed time: " << timer.getLastElapsedTime() << " ms\tresult: " 
                   << (ret0 == ERROR_CODE_OK ? "\u2705 SUCCESS" : "\u274C FAILED") << std::endl;
     }
@@ -59,7 +59,7 @@ int main() {
     {
         std::thread t(thread_func);
         t.detach();
-        ERROR_CODE ret = timer.executeStep(1);
+        ERROR_CODE ret = timer.executeSleep(1);
         std::cout << "Step 1 elapsed time: " << timer.getLastElapsedTime() << " ms\tresult: " 
                   << (ret == ERROR_CODE_OK ? "\u2705 SUCCESS" : "\u274C FAILED") << std::endl;
     }
@@ -68,13 +68,13 @@ int main() {
     {
         std::thread t(thread_func);
         t.detach();
-        ERROR_CODE ret = timer.executeStep(2);
+        ERROR_CODE ret = timer.executeSleep(2);
         std::cout << "Step 2 elapsed time: " << timer.getLastElapsedTime() << " ms\tresult: " 
                   << (ret == ERROR_CODE_OK ? "\u2705 SUCCESS" : "\u274C FAILED") << std::endl;
     }
 
     {
-        ERROR_CODE ret = timer.executeStep(3);
+        ERROR_CODE ret = timer.executeSleep(3);
         std::cout << "Step 3 elapsed time: " << timer.getLastElapsedTime() << " ms\tresult: " 
                   << (ret == ERROR_CODE_OK ? "\u2705 SUCCESS" : "\u274C FAILED") << std::endl;
     }
