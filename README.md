@@ -1,6 +1,10 @@
 # EErratic
 EErratic : C/C++ headers for avoiding Embedded Erratic test
 
+> [!NOTE]
+> This project has the ability to turn a completely doomed project into a slightly less doomed one... 🔥
+
+
 ## EErratic timer
 
 In embedded systems, execution time and timing must be considered in the design, but the difficulty of creating and debugging such systems is high for teams with immature design technology and coordination with other devices.
