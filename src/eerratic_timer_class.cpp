@@ -31,7 +31,7 @@ void EEerraticTimer::resetLoop() {
     m_loopStartTime = m_timerUtils.get_current_time_func();
 }
 
-ERROR_CODE EEerraticTimer::executeStep(int id) {
+ERROR_CODE EEerraticTimer::executeSleep(int id) {
     auto it = m_steps.find(id);
     if (it == m_steps.end()) {
         return ERROR_CODE_INVALID_PARAMETER;
