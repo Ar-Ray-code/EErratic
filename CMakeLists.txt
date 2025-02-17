@@ -3,6 +3,25 @@ project(eerratic_test)
 
 find_package(GTest REQUIRED)
 
+# sample eerratic timer ================================================
+add_executable(eerratic_timer_c
+    example/eerratic_timer/c/main.c
+)
+target_include_directories(eerratic_timer_c
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+add_executable(eerratic_timer_cpp
+    example/eerratic_timer/cpp/main.cpp
+)
+target_include_directories(eerratic_timer_cpp
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+
+# Test ================================================================
 add_executable(eerratic_test
     test/test_eerratic_timer.cpp
 )
