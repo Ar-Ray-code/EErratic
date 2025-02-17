@@ -108,12 +108,7 @@ static inline void sleep_remaining_time(
         return;
     }
 
-    if (expected_elapsed_time <= current_time - loop_start_time) {
-        return;
-    }
-
-    uint32_t remaining_time = expected_elapsed_time - (current_time - loop_start_time);
-
+    uint32_t remaining_time = expected_elapsed_time;
     remaining_time = (remaining_time > loop_expected_elapsed_time - (current_time - loop_start_time)) ? loop_expected_elapsed_time - (current_time - loop_start_time) : remaining_time;
 
     if (remaining_time > 0) {
@@ -212,7 +207,8 @@ static inline ERROR_CODE wait_time_and_event(
         }
     }
 
-    sleep_remaining_time(loop_start_time, loop_expected_elapsed_time, expected_elapsed_time, NULL, get_current_time_func, sleep_func);
+    uint32_t remaining_time = expected_elapsed_time - (get_current_time_func() - start_time);
+    sleep_remaining_time(loop_start_time, loop_expected_elapsed_time, remaining_time, NULL, get_current_time_func, sleep_func);
     if (elapsed_time != NULL)
     {
         *elapsed_time = get_current_time_func() - start_time;

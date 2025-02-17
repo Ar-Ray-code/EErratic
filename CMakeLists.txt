@@ -20,6 +20,24 @@ target_include_directories(eerratic_timer_cpp
     ${CMAKE_SOURCE_DIR}/include
 )
 
+add_library(eerratic_timer_class
+    src/eerratic_timer_class.cpp
+)
+target_include_directories(eerratic_timer_class
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+add_executable(eerratic_timer_class_cpp
+    example/eerratic_timer_class/cpp/main.cpp
+)
+target_include_directories(eerratic_timer_class_cpp
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+target_link_libraries(eerratic_timer_class_cpp
+    eerratic_timer_class
+)
 
 # Test ================================================================
 add_executable(eerratic_test
