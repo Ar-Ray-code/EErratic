@@ -1,9 +1,16 @@
-// main.cpp
-#include "eerratic_timer_class.hpp"
+/*
+ * Copyright (c) 2024 Ar-Ray-code
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+
 #include <atomic>
 #include <chrono>
 #include <iostream>
 #include <thread>
+
+#include "eerratic_timer_class.hpp"
 
 
 std::atomic<bool> flag{false};
@@ -67,7 +74,6 @@ int main() {
     }
 
     {
-        // イベント待ちではなく、残り時間だけスリープする動作
         ERROR_CODE ret = timer.executeStep(3);
         std::cout << "Step 3 elapsed time: " << timer.getLastElapsedTime() << " ms\tresult: " 
                   << (ret == ERROR_CODE_OK ? "\u2705 SUCCESS" : "\u274C FAILED") << std::endl;

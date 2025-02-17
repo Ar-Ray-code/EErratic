@@ -12,6 +12,7 @@
 
 #include "eerratic_timer.h"
 
+
 bool flag = false;
 
 uint32_t get_current_time_impl(void) {
