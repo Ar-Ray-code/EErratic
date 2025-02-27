@@ -48,8 +48,8 @@ int main(void)
 
     timer_utils_t timer_func_base = {
         .get_current_time_func = get_current_time_impl,
-        .sleep_func = sleep_ms_impl,
-        .is_event_set_func = is_event_set_impl
+        .is_event_set_func = is_event_set_impl,
+        .sleep_func = sleep_ms_impl
     };
 
     timer_utils_t timer_step_0 = timer_func_base;
